@@ -29,7 +29,7 @@ RUN apt-get install -y python3-pip python3-zmq python3-gevent python3-numpy pyth
 
 RUN pip3 install --upgrade setuptools && pip3 install docopt && pip3 install pyyaml
 
-RUN cd agent && pip3 install . && \
+RUN cd agent && pip3 install . \
 cd ../controller && pip3 install . \
 cd ../framework && pip3 install . \
 cd ../pyre && pip3 install . \
