@@ -43,6 +43,6 @@ cd ../wishful-module-6lowpan && pip3 install . \
 cd ../wishful-module-lora && pip3 install . \
 cd ../wishful-module-uwb && pip3 install .
 
-COPY docker/start.sh /root/wishful
+COPY docker/start.sh /root
 
-ENTRYPOINT ["/root/wishful/start.sh"]
+ENTRYPOINT ["/root/start.sh"]
