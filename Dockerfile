@@ -25,15 +25,9 @@ git clone https://github.com/wishful-project/wishful-module-uwb.git
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update
 
-RUN apt-get install -y python3-pip
-RUN apt-get install -y python3-zmq
-RUN apt-get install -y python3-gevent
-RUN apt-get install -y python3-numpy
-RUN apt-get install -y python3-lxml
+RUN apt-get install -y python3-pip python3-zmq python3-gevent python3-numpy python3-lxml
 
-RUN pip3 install docopt
-RUN pip3 install pyyaml
-RUN pip3 install --upgrade setuptools
+RUN pip3 install --upgrade setuptools && pip3 install docopt && pip3 install pyyaml
 
 RUN cd agent && pip3 install . && \
 cd ../controller && pip3 install . \
