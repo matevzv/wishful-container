@@ -13,6 +13,7 @@ git clone https://github.com/wishful-project/controller.git && \
 git clone https://github.com/wishful-project/examples.git && \
 git clone https://github.com/wishful-project/framework.git && \
 git clone https://github.com/wishful-project/pyre.git && \
+git clone https://github.com/wishful-project/module_discovery.git && \
 git clone https://github.com/wishful-project/module_discovery_pyre.git && \
 git clone https://github.com/wishful-project/module_iperf.git && \
 git clone https://github.com/wishful-project/python-tc.git && \
@@ -27,21 +28,13 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/so
 
 RUN apt-get install -y python3-pip python3-zmq python3-gevent python3-numpy python3-lxml
 
-RUN pip3 install --upgrade setuptools && pip3 install docopt && pip3 install pyyaml
+RUN pip3 install --upgrade setuptools
+RUN pip3 install docopt pyyaml
 
-RUN cd agent && pip3 install . \
-cd ../controller && pip3 install . \
-cd ../framework && pip3 install . \
-cd ../pyre && pip3 install . \
-cd ../module_discovery_pyre && pip3 install . \
-cd ../module_iperf && pip3 install . \
-cd ../python-tc && pip3 install . \
-cd ../wishful_upis && pip3 install . \
-cd ../module_simple && pip3 install . \
-cd ../wishful-module-ismtv && pip3 install . \
-cd ../wishful-module-6lowpan && pip3 install . \
-cd ../wishful-module-lora && pip3 install . \
-cd ../wishful-module-uwb && pip3 install .
+RUN pip3 install agent/ controller/ framework/ pyre/ module_discovery/ \
+module_discovery_pyre/ module_iperf/ python-tc/ wishful_upis/ module_simple/ \
+wishful-module-ismtv/ wishful-module-6lowpan/ wishful-module-lora/ \
+wishful-module-uwb/
 
 COPY docker/start.sh /root
 
