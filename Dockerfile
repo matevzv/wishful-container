@@ -5,6 +5,8 @@ LABEL Description="This image is used to bootstrap Wishful UPIs"
 LABEL Vendor="JSI"
 LABEL Version="1.0"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN mkdir -p wishful
 WORKDIR /root/wishful
 
