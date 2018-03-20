@@ -38,6 +38,6 @@ module_discovery_pyre/ module_iperf/ python-tc/ wishful_upis/ module_simple/ \
 wishful-module-ismtv/ wishful-module-6lowpan/ wishful-module-lora/ \
 wishful-module-uwb/
 
-COPY docker/start.sh /root
+COPY docker /root
 
 ENTRYPOINT ["/root/start.sh"]
